@@ -3,131 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Bounce Your Balls]] - Android Game Showcase</title>
+    <title>Bounce Your Balls - Android Game Showcase</title>
     <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #f5f5f5;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(135deg, #4CAF50, #81C784);
+            background: linear-gradient(135deg, #1f6feb, #238636);
             color: white;
-            padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            padding: 60px 20px;
+            border-bottom: 5px solid #30363d;
         }
         header h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
         header p {
-            margin: 10px 0 0;
             font-size: 1.2em;
+            margin-top: 10px;
         }
         nav {
             text-align: center;
-            margin: 20px 0;
+            margin: 30px 0;
         }
         nav a {
             text-decoration: none;
-            background: #4CAF50;
+            background: #238636;
             color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-size: 1.1em;
-            transition: background 0.3s;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
         nav a:hover {
-            background: #81C784;
+            background: #1f6feb;
+            transform: scale(1.05);
         }
         main {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 20px auto;
-            background: #1E1E1E;
-            padding: 30px;
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #161b22;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         }
         h2 {
-            color: #4CAF50;
-            border-bottom: 2px solid #81C784;
+            color: #58a6ff;
+            border-bottom: 2px solid #238636;
             padding-bottom: 5px;
+            margin-bottom: 20px;
         }
         ul {
             list-style: none;
             padding: 0;
         }
         ul li {
+            background: #21262d;
             margin: 10px 0;
-            padding: 10px;
-            background: #2E2E2E;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease;
+        }
+        ul li:hover {
+            transform: translateX(5px);
+            background: #30363d;
         }
         img {
             width: 100%;
             border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
         video {
             width: 100%;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         }
         .downloads a {
             display: inline-block;
-            margin: 10px 5px;
+            margin: 10px 10px 0 0;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             color: white;
-            background: #4CAF50;
-            border-radius: 25px;
-            transition: background 0.3s;
+            background: #238636;
+            border-radius: 50px;
+            font-size: 1.1em;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
         .downloads a:hover {
-            background: #81C784;
+            background: #1f6feb;
+            transform: scale(1.1);
         }
         form {
-            background: #2E2E2E;
+            background: #21262d;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         }
         form label {
             display: block;
-            margin: 10px 0 5px;
+            margin: 15px 0 5px;
+            font-weight: bold;
         }
-        form input, form textarea, form button {
+        form input, form textarea {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
-            border: none;
-            border-radius: 5px;
-        }
-        form input, form textarea {
-            background: #1E1E1E;
-            color: white;
+            background: #161b22;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            font-size: 1em;
         }
         form button {
-            background: #4CAF50;
+            background: #238636;
             color: white;
+            border: none;
+            padding: 12px 20px;
             font-size: 1em;
+            border-radius: 50px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
         form button:hover {
-            background: #81C784;
+            background: #1f6feb;
+            transform: scale(1.1);
         }
         footer {
             text-align: center;
             padding: 20px;
-            background: #333;
-            color: white;
-            margin-top: 20px;
+            background: #161b22;
+            color: #c9d1d9;
+            margin-top: 40px;
+            border-top: 5px solid #30363d;
         }
         footer p {
             margin: 0;
@@ -136,8 +158,8 @@
 </head>
 <body>
     <header>
-        <h1>[Bounce Your Balls]</h1>
-        <p>Developed by Christian Jhun R Caberte| BSIT 2nd Year | Southern Leyte State University - Tomas Oppus</p>
+        <h1>Bounce Your Balls</h1>
+        <p>Developed by Christian Jhun R Caberte | BSIT 2nd Year | Southern Leyte State University - Tomas Oppus</p>
     </header>
 
     <nav>
@@ -147,14 +169,14 @@
     <main>
         <section class="description">
             <h2>About the Game</h2>
-            <p>[Bounce Your Balls] is an exciting Android game developed as a project for the Mobile App Development course. It challenges players to control the ball until it became fast and becarefully not to  fall it down with unique gameplay mechanics, and an immersive experience.</p>
+            <p>Bounce Your Balls is an exciting Android game developed as a project for the Mobile App Development course. It challenges players to control the ball as it speeds up, ensuring it doesn't fall, with unique gameplay mechanics and an immersive experience.</p>
         </section>
 
         <section class="features">
             <h2>Features</h2>
             <ul>
                 <li>Innovative gameplay mechanics</li>
-                <li>Bounce The Ball and Control it</li>
+                <li>Bounce the ball and control it</li>
                 <li>Beautiful graphics and animations</li>
                 <li>Engaging sound effects and music</li>
             </ul>
@@ -163,33 +185,31 @@
         <section class="tools">
             <h2>Development Tools</h2>
             <ul>
-                <li>Andriod Stiudio</li>
-                <li>C+</li>
-                <li>Unity hub 2D game</li>
+                <li>Android Studio</li>
+                <li>C++</li>
+                <li>Unity Hub (2D Game)</li>
                 <li>Visily</li>
             </ul>
         </section>
 
-<section class="media">
-    <h2>Visual Media</h2>
-    <h3>Screenshots</h3>
-    <img src="sc2.png" alt="Main Menu Screenshot">
-    <img src="sc3.png" alt="In-game Action Screenshot">
-    <img src="sc1.png" alt="In-game Action Screenshot">
-    
-    <h3>Game Trailer</h3>
-    <video controls>
-        <source src="2024-12-12 15-44-57.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</section>
-
+        <section class="media">
+            <h2>Visual Media</h2>
+            <h3>Screenshots</h3>
+            <img src="sc2.png" alt="Main Menu Screenshot">
+            <img src="sc3.png" alt="In-game Action Screenshot">
+            <img src="sc1.png" alt="Another Gameplay Screenshot">
+            
+            <h3>Game Trailer</h3>
+            <video controls>
+                <source src="2024-12-12 15-44-57.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
 
         <section class="downloads">
             <h2>Download Options</h2>
             <ul>
                 <li><a href="https://www.upload-apk.com/BNN90Q1qeeiL7rA" target="_blank">Download from upload-apk</a></li>
-         
             </ul>
         </section>
 
